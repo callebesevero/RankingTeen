@@ -1,4 +1,4 @@
-function getSaturday() {
+export function getSaturday() {
     const date = new Date();
 
     const year = date.getFullYear();
@@ -6,14 +6,13 @@ function getSaturday() {
     const day = date.getDate();
     const dayOfWeek = date.getDay();
 
-    /*
-    new Date().getDay() -> ordem do dia da semana
-    new Date().getDate() -> numero do dia
-    */
-
     const saturday = dayOfWeek === 6 
         ? day 
         : day - (dayOfWeek + 1);
 
-    return saturday; // return last saturday date number
+    const saturdayDate = saturday <= 0
+        ? new Date(year, month - 1, new Date(year, month, 0).getDate() - -saturday)
+        : new Date(year, month, saturday);
+
+    return saturdayDate.toLocaleDateString("pt-BR", {day: "2-digit", month: "long", year: "numeric"}) // return last saturday date number
 }
