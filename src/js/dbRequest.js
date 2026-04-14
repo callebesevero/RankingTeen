@@ -11,6 +11,13 @@ export async function getLastRanking() {
 
 export async function getLastRankedPeople() {
     const object = await getLastDBObject();
+    const ranking = object[Object.keys(object)]["ranking"];
+
+    const people = Object.keys(ranking).map(key => {
+        return ranking[key]["name"];
+    });
+
+    return people;
 };
 
 async function getLastDBObject() {
@@ -23,7 +30,7 @@ async function getLastDBObject() {
     const snapshot = await get(lastObjectQuery);
 
     if (snapshot.exists()) {
-        return JSON.stringify(snapshot.val());
+        return snapshot.val();
     } else {
         return "";
     };
