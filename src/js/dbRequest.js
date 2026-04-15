@@ -1,17 +1,23 @@
-import { ref, query, orderByKey, limitToLast, get } from "firebase/database";
+import { ref, query, orderByKey, limitToLast, get, set } from "firebase/database";
 import { db } from "./firebaseConfig";
 
 export async function getLastRankingDate() {
-
+    const object = await getLastDBObject();
+    const date = object["date"];
+    
+    return date;
 };
 
 export async function getLastRanking() {
-    
+    const object = await getLastDBObject();
+    const ranking = object["ranking"];
+
+    return ranking;
 };
 
 export async function getLastRankedPeople() {
     const object = await getLastDBObject();
-    const ranking = object[Object.keys(object)]["ranking"];
+    const ranking = object["ranking"];
 
     const people = Object.keys(ranking).map(key => {
         return ranking[key]["name"];
@@ -34,4 +40,30 @@ async function getLastDBObject() {
     } else {
         return "";
     };
+};
+
+export async function addPeopleToDB(
+    people
+) {
+    const date = await getLastRankingDate();
+    const ranking = await getLastRanking();
+    const peopleNumber = Math.max(...Object.keys(ranking)) + 1;
+
+    ranking[peopleNumber] = { 
+        "name": `${people}`, 
+        "score": "0" 
+    };
+    
+    const newRanking = {
+        "date": `${date}`,
+        ranking
+    };
+
+    await addToDB(newRanking);
+};
+
+export async function addToDB(
+    item
+) {
+    await set(ref(db, "/"), item);
 };
