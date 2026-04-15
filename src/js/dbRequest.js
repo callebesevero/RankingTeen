@@ -29,8 +29,7 @@ export async function getLastRankedPeople() {
 async function getLastDBObject() {
     const lastObjectQuery = query(
         ref(db, "/"), 
-        orderByKey(), 
-        limitToLast(1)
+        orderByKey()
     );
 
     const snapshot = await get(lastObjectQuery);
