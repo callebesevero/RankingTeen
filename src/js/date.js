@@ -10,9 +10,9 @@ export function getSaturday() {
         ? day 
         : day - (dayOfWeek + 1);
 
-    const saturdayDate = saturday <= 0
+    const saturdayDate = (saturday <= 0)
         ? new Date(year, month - 1, new Date(year, month, 0).getDate() - -saturday)
         : new Date(year, month, saturday);
 
     return saturdayDate.toLocaleDateString("pt-BR", {day: "2-digit", month: "long", year: "numeric"}) // return last saturday date number
-}
+};
