@@ -5,7 +5,7 @@ export function constructPeopleCardRate(
 
     return `
     <div class="people-rating-card" data-name="${people}">
-        <div class="name">${people}</div>
+        <div class="card-people-name">${people}</div>
         ${checkboxes}
     </div>
     `
@@ -72,8 +72,16 @@ function constructCheckboxes() {
 
 export function constructAddPeopleButton() {
     return `
-    <div class="people-button">
+    <div class="container-button-addPeople">
         <input type="button" id="button-addPeople" value="Adicionar pessoa">
+    </div>
+    `
+};
+
+export function constructConfirmScoreButton() {
+    return `
+    <div class="container-button-confirmScore">
+        <input type="button" id="button-confirmScore" value="Confirmar pontuação">
     </div>
     `
 };

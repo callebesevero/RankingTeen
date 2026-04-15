@@ -1,6 +1,7 @@
 import { getSaturday } from "./date";
 import { exhibitEmptyRating } from "./exhibition";
-import { addPeopleToDB } from "./dbRequest";
+import { addPeopleToDB, addToDB } from "./dbRequest";
+import { formatRankingToDB } from "./ranking";
 
 const main = document.querySelector(".main-content");
 
@@ -25,4 +26,12 @@ addPeople.addEventListener("click", async () => {
 
         window.location.reload();
     };
+});
+
+const confirmScore = document.querySelector("#button-confirmScore");
+confirmScore.addEventListener("click", async () => {
+    const ranking = formatRankingToDB();
+    addToDB(ranking);
+
+    // window.location.reload();
 });
