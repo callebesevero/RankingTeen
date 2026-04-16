@@ -1,4 +1,4 @@
-import { ref, query, orderByKey, limitToLast, get, set } from "firebase/database";
+import { ref, query, orderByKey, orderByChild, equalTo, get, set } from "firebase/database";
 import { db } from "./firebaseConfig";
 
 export async function getLastRankingDate() {
@@ -24,6 +24,19 @@ export async function getLastRankedPeople() {
     });
 
     return people;
+};
+
+export async function getLastScore(
+    people
+) {
+    const rankingRef = ref(db, "/ranking");
+    const nameSearch = query(rankingRef, orderByChild("name"), equalTo(people));
+
+    return get(nameSearch).then(snapshot => {
+        if (snapshot.exists()) {
+            return snapshot.val()[Object.keys(snapshot.val())]["score"];
+        };
+    });
 };
 
 async function getLastDBObject() {
