@@ -3,7 +3,7 @@ import { calculateScore } from "./score";
 
 export async function formatRankingToDB() {
     const cards = Array.from(
-        document.querySelectorAll(".people-rating-card")
+        document.querySelectorAll(".people-rate-card")
     );
 
     const scores = await Promise.all(cards.map(async (card) => {
@@ -24,11 +24,11 @@ export function formatRankingToText() {
     const ranking = getLastRanking();
 
     const textRanking = ranking.map((people) => {
-        if (people === 1) {        // gold medal 🥇
+        if (people === 0) {        // gold medal 🥇
             return `🥇 ${people["name"]} - ${people["score"]} pontos\n`
-        } else if (people === 2) { // silver medal 🥈
+        } else if (people === 1) { // silver medal 🥈
             return `🥈 ${people["name"]} - ${people["score"]} pontos\n`
-        } else if (people === 3) { // bronze medal 🥉
+        } else if (people === 2) { // bronze medal 🥉
             return `🥉 ${people["name"]} - ${people["score"]} pontos\n`
         } else {
             return `   ${people["name"]} - ${people["score"]} pontos\n`

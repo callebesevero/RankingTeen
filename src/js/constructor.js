@@ -1,10 +1,10 @@
-export function constructPeopleCardRate(
+export function constructPeopleRateCard(
     people
 ) {
     const checkboxes = constructCheckboxes();
 
     return `
-    <div class="people-rating-card" data-name="${people}">
+    <div class="people-rate-card" data-name="${people}">
         <div class="card-people-name">${people}</div>
         ${checkboxes}
     </div>
@@ -70,6 +70,18 @@ function constructCheckboxes() {
     `
 };
 
+export function constructPeopleRatedCard(
+    people,
+    score
+) {
+    return `
+    <div class="people-rated-card">
+        <div class="card-people-name">${people}</div>
+        <div class="card-people-score">${score}</div>
+    </div>
+    `
+};
+
 export function constructAddPeopleButton() {
     return `
     <div class="container-button-addPeople">
@@ -82,6 +94,14 @@ export function constructConfirmScoreButton() {
     return `
     <div class="container-button-confirmScore">
         <input type="button" id="button-confirmScore" value="Confirmar pontuação">
+    </div>
+    `
+};
+
+export function constructCopyRankingButton() {
+    return`
+    <div class="container-button-copyRanking">
+        <input type="button" id="button-copyRanking" value="Copiar ranking para enviar no WhatsApp">
     </div>
     `
 };
