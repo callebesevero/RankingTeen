@@ -5,9 +5,11 @@ export async function exhibitEmptyRating() {
     try {
         const rankedPeople = await getLastRankedPeople();
 
-        const rankedPeopleCardRate = rankedPeople.map(people => {
-            return constructPeopleRateCard(people);
-        });
+        const rankedPeopleCardRate = (rankedPeople)
+            ? rankedPeople.map(people => {
+                return constructPeopleRateCard(people);
+            }).join("")
+            : "";
 
         const addPeopleButton = constructAddPeopleButton();
         const confirmScoreButton = constructConfirmScoreButton();
@@ -27,7 +29,7 @@ export async function exhibitLastRating() {
             const score = people["score"];
             
             return constructPeopleRatedCard(name, score);
-        });
+        }).join("");
         const copyRankingButton = constructCopyRankingButton();
 
         return peopleCards + copyRankingButton;

@@ -3,7 +3,7 @@ import { calculateScore } from "./score";
 
 export async function formatRankingToDB() {
     const cards = Array.from(
-        document.querySelectorAll(".people-rating-card")
+        document.querySelectorAll(".people-rate-card")
     );
 
     const scores = await Promise.all(cards.map(async (card) => {

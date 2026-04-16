@@ -17,7 +17,11 @@ export async function getLastRanking() {
 
 export async function getLastRankedPeople() {
     const object = await getLastDBObject();
-    const ranking = object["ranking"];
+    const ranking = object?.ranking;
+
+    if (!ranking) {
+        return null;
+    };
 
     const people = Object.keys(ranking).map(key => {
         return ranking[key]["name"];
@@ -58,8 +62,10 @@ export async function addPeopleToDB(
     people
 ) {
     const date = await getLastRankingDate();
-    const ranking = await getLastRanking();
-    const peopleNumber = Math.max(...Object.keys(ranking)) + 1;
+    const ranking = await getLastRanking() || {};
+    const peopleNumber = Object.keys(ranking).length > 0
+        ? Math.max(...Object.keys(ranking)) + 1
+        : 0;
 
     ranking[peopleNumber] = { 
         "name": `${people}`, 
