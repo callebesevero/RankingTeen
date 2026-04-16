@@ -19,24 +19,21 @@ export async function formatRankingToDB() {
     return scores;
 };
 
-export function formatRankingToText() {
-    const date = getLastRankingDate();
-    const ranking = getLastRanking();
+export async function formatRankingToText() {
+    const date = await getLastRankingDate();
+    const ranking = await getLastRanking();
 
-    const textRanking = ranking.map((people) => {
-        if (people === 1) {        // gold medal 🥇
-            return `🥇 ${people["name"]} - ${people["score"]} pontos\n`
-        } else if (people === 2) { // silver medal 🥈
-            return `🥈 ${people["name"]} - ${people["score"]} pontos\n`
-        } else if (people === 3) { // bronze medal 🥉
-            return `🥉 ${people["name"]} - ${people["score"]} pontos\n`
+    const textRanking = ranking.map((people, position) => {
+        if (position === 0) {        // gold medal 🥇
+            return `🥇 ${people["name"]}   ${people["score"]} pontos\n`
+        } else if (position === 1) { // silver medal 🥈
+            return `🥈 ${people["name"]}   ${people["score"]} pontos\n`
+        } else if (position === 2) { // bronze medal 🥉
+            return `🥉 ${people["name"]}   ${people["score"]} pontos\n`
         } else {
-            return `   ${people["name"]} - ${people["score"]} pontos\n`
+            return `   ${people["name"]}   ${people["score"]} pontos\n`
         };
-    });
+    }).join("");
 
-    return `
-    *RANKING ATUALIZADO - ${date}*\n
-    ${textRanking}
-    `
+    return `*RANKING ATUALIZADO - ${date}*\n${textRanking}`
 };

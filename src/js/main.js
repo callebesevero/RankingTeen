@@ -1,7 +1,7 @@
 import { getSaturday } from "./date";
 import { exhibitEmptyRating, exhibitLastRating } from "./exhibition";
 import { addPeopleToDB, addToDB, getLastRankingDate } from "./dbRequest";
-import { formatRankingToDB } from "./ranking";
+import { formatRankingToDB, formatRankingToText } from "./ranking";
 
 const main = document.querySelector(".main-content");
 
@@ -19,6 +19,13 @@ rankingTableContainer.classList.add("ranking-table");
 if (getSaturday() === await getLastRankingDate()) { // if last saturday is in DB
     rankingTableContainer.innerHTML = await exhibitLastRating();
     main.appendChild(rankingTableContainer);
+
+    const copyRanking = document.querySelector("#button-copyRanking");
+    copyRanking.addEventListener("click", async () => {
+        const textRanking = await formatRankingToText();
+
+        navigator.clipboard.writeText(textRanking);
+    });
 } else { // if last saturday is not in DB
     rankingTableContainer.innerHTML = await exhibitEmptyRating();
     main.appendChild(rankingTableContainer);
