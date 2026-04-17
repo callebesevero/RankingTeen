@@ -79,16 +79,24 @@
 
     border-radius: 16px;
 
-    padding: 32px;
     margin: 8px 0px;
     gap: 32px;
-    width: 100%;
 
     background-color: var(--color-off-white-campfire);
 }
 
+@media (min-width: 1024px) {
+    .people-rated-card { 
+        width: 100%;
+    }
+}
+
 .card-people-name { 
     align-content: center;
+
+    padding: 32px;
+    width: 100%;
+    
 
     font: var(--fw-bold) var(--fs-body) var(--font-main);
 }
@@ -101,6 +109,14 @@
 
 .card-people-score { 
     font: var(--fw-regular) var(--fs-body) var(--font-main);
+
+    background-color: var(--color-campfire);
+    color: white;
+
+    border-radius: 8px;
+
+    padding: 32px;
+    width: 100%;
 }
 
 .container-buttons { 
