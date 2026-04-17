@@ -24,7 +24,19 @@ if (getSaturday() === await getLastRankingDate()) { // if last saturday is in DB
     copyRanking.addEventListener("click", async () => {
         const textRanking = await formatRankingToText();
 
-        navigator.clipboard.writeText(textRanking);
+        try {
+            await navigator.clipboard.writeText(textRanking);
+
+            const copyRankingButtonOriginalText = copyRanking.value;
+
+            copyRanking.value = "Texto copiado com sucesso! ✅";
+
+            setTimeout(() => {
+                copyRanking.value = copyRankingButtonOriginalText;
+            }, 2000);
+        } catch (err) {
+            console.error("Aconteceu algum erro", err);
+        };
     });
 } else { // if last saturday is not in DB
     rankingTableContainer.innerHTML = await exhibitEmptyRating();
