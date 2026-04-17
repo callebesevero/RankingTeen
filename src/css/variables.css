@@ -1,0 +1,20 @@
+:root {
+    /* color */
+    --color-campfire: #E36520;
+    --color-white: #FFF;
+    --color-off-white-campfire: #f4dbce;
+
+    /* font */
+    --fw-bold: 700;
+    --fw-regular: 400;
+
+    --fs-h1: 32px;
+    --fs-body: 20px;
+    --fs-caption: 16px;
+    
+    --font-main: "Noto Sans", sans-serif;
+
+    /* structure */
+    --width-desktop: 1024px;
+    --width-mobile: 90%;
+}

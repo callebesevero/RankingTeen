@@ -20,7 +20,7 @@ function calculateRating(
     card
 ) {
     const checkboxes = Array.from(
-        card.querySelectorAll(".score-input")
+        card.querySelectorAll(".checkbox-score")
     );
 
     let score = 0;

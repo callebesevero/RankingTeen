@@ -1,0 +1,35 @@
+.container-logo-rankingTeen { 
+    display: flex;
+    justify-content: center;
+}
+
+.logo-rankingTeen {
+    width: 150px;
+    height: auto;
+}
+
+@media (min-width: 1024px) {
+    .logo-rankingTeen { 
+        width: 300px;
+        height: auto;
+    }
+}
+
+.container-logo-IASD { 
+    display: flex;
+    justify-content: center;
+}
+
+.logo-IASD { 
+    width: 100px;
+    height: auto;
+
+    filter: brightness(0);
+}
+
+@media (min-width: 1024px) {
+    .logo-IASD { 
+        width: 200px;
+        height: auto;
+    }
+}

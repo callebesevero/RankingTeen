@@ -1,0 +1,130 @@
+.ranking-date { 
+    text-align: center;
+    
+    font: var(--fw-bold) var(--fs-h1) var(--font-main);
+}
+
+.ranking-table { 
+    width: 100%;
+}
+
+.people-rate-card { 
+    display: flex;
+
+    border-radius: 16px;
+
+    padding: 32px;
+    margin: 8px 0px;
+    gap: 32px;
+    width: 100%;
+
+    background-color: var(--color-off-white-campfire);
+}
+
+.all-checkbox-container { 
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+
+
+    gap: 8px;
+}
+
+.checkbox-container label { 
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    align-items: center;
+
+    font: var(--fw-regular) var(--fs-caption) var(--font-main);
+}
+
+.checkbox-score { 
+    appearance: none;
+
+    cursor: pointer;
+
+    padding: 16px;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: var(--color-campfire);
+}
+
+.checkbox-score:checked {
+    background-color: var(--color-campfire);
+}
+
+.people-rated-card { 
+    display: flex;
+
+    border-radius: 16px;
+
+    padding: 32px;
+    margin: 8px 0px;
+    gap: 32px;
+    width: 100%;
+
+    background-color: var(--color-off-white-campfire);
+}
+
+.card-people-name { 
+    width: 128px;
+
+    align-content: center;
+
+    font: var(--fw-bold) var(--fs-body) var(--font-main);
+}
+
+.card-people-score { 
+    font: var(--fw-regular) var(--fs-body) var(--font-main);
+}
+
+.container-buttons { 
+    display: flex;
+
+    gap: 16px;
+}
+
+input[type="button"] { 
+    display: flex;
+
+    padding: 16px;
+    border-radius: 8px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent;
+
+
+    box-sizing: border-box;
+    vertical-align: middle;
+
+    font: var(--fw-regular) var(--fs-caption) var(--font-main);
+}
+
+#button-addPeople { 
+    cursor: pointer;
+
+    border-color: var(--color-campfire);
+
+    background-color: var(--color-off-white-campfire);
+    color: var(--color-campfire);
+}
+
+#button-addPeople:hover { 
+    background-color: var(--color-campfire);
+    color: var(--color-off-white-campfire);
+}
+
+#button-copyRanking, 
+#button-confirmScore {
+    cursor: pointer;
+
+    background-color: var(--color-campfire);
+    color: var(--color-off-white-campfire);
+}
+
+#button-copyRanking:hover, 
+#button-confirmScore:hover { 
+    background-color: var(--color-off-white-campfire);
+    color: var(--color-campfire);
+}
