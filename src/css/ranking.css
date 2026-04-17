@@ -95,8 +95,6 @@
     align-content: center;
 
     padding: 32px;
-    width: 100%;
-    
 
     font: var(--fw-bold) var(--fs-body) var(--font-main);
 }
