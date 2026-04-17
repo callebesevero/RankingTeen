@@ -1,5 +1,5 @@
 import { getLastRankedPeople, getLastRanking } from "./dbRequest";
-import { constructAddPeopleButton, constructConfirmScoreButton, constructCopyRankingButton, constructPeopleRateCard, constructPeopleRatedCard } from "./constructor";
+import { constructAddPeopleButton, constructConfirmScoreButton, constructContainerButtons, constructCopyRankingButton, constructPeopleRateCard, constructPeopleRatedCard } from "./constructor";
 
 export async function exhibitEmptyRating() {
     try {
@@ -13,8 +13,10 @@ export async function exhibitEmptyRating() {
 
         const addPeopleButton = constructAddPeopleButton();
         const confirmScoreButton = constructConfirmScoreButton();
+
+        const containerButtons = constructContainerButtons(addPeopleButton, confirmScoreButton);
     
-        return rankedPeopleCardRate + addPeopleButton + confirmScoreButton;
+        return rankedPeopleCardRate + containerButtons;
     } catch (err) {
         console.error(err);
     };

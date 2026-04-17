@@ -13,59 +13,61 @@ export function constructPeopleRateCard(
 
 function constructCheckboxes() {
     return `
-    <div class="checkbox">
-        <label> 
-            <input type="checkbox" class="score-input" data-type="punctuality">
-            Pontualidade
-        </label>
-    </div>
-    <div class="checkbox">
-        <label> 
-            <input type="checkbox" class="score-input" data-type="bible">
-            Bíblia
-        </label>
-    </div>
-    <div class="checkbox">
-        <label> 
-            <input type="checkbox" class="score-input" data-type="comment">
-            Comentários
-        </label>
-    </div>
-    <div class="checkbox">
-        <label> 
-            <input type="checkbox" class="score-input" data-type="pray">
-            Oração
-        </label>
-    </div>
-    <div class="checkbox">
-        <label> 
-            <input type="checkbox" class="score-input" data-type="read">
-            Leitura
-        </label>
-    </div>
-    <div class="checkbox">
-        <label> 
-            <input type="checkbox" class="score-input" data-type="study">
-            Estudou a lição
-        </label>
-    </div>
-    <div class="checkbox">
-        <label> 
-            <input type="checkbox" class="score-input" data-type="visitor">
-            Levar visitante
-        </label>
-    </div>
-    <div class="checkbox">
-        <label> 
-            <input type="checkbox" class="score-input" data-type="talk">
-            Conversas paralelas
-        </label>
-    </div>
-    <div class="checkbox">
-        <label> 
-            <input type="checkbox" class="score-input" data-type="smartphone">
-            Mexer no celular
-        </label>
+    <div class="all-checkbox-container">
+        <div class="checkbox-container">
+            <label> 
+                <input type="checkbox" class="checkbox-score" data-type="punctuality">
+                Pontualidade
+            </label>
+        </div>
+        <div class="checkbox-container">
+            <label> 
+                <input type="checkbox" class="checkbox-score" data-type="bible">
+                Bíblia
+            </label>
+        </div>
+        <div class="checkbox-container">
+            <label> 
+                <input type="checkbox" class="checkbox-score" data-type="comment">
+                Comentários
+            </label>
+        </div>
+        <div class="checkbox-container">
+            <label> 
+                <input type="checkbox" class="checkbox-score" data-type="pray">
+                Oração
+            </label>
+        </div>
+        <div class="checkbox-container">
+            <label> 
+                <input type="checkbox" class="checkbox-score" data-type="read">
+                Leitura
+            </label>
+        </div>
+        <div class="checkbox-container">
+            <label> 
+                <input type="checkbox" class="checkbox-score" data-type="study">
+                Estudou a lição
+            </label>
+        </div>
+        <div class="checkbox-container">
+            <label> 
+                <input type="checkbox" class="checkbox-score" data-type="visitor">
+                Levar visitante
+            </label>
+        </div>
+        <div class="checkbox-container">
+            <label> 
+                <input type="checkbox" class="checkbox-score" data-type="talk">
+                Conversas paralelas
+            </label>
+        </div>
+        <div class="checkbox-container">
+            <label> 
+                <input type="checkbox" class="checkbox-score" data-type="smartphone">
+                Mexer no celular
+            </label>
+        </div>
     </div>
     `
 };
@@ -81,6 +83,16 @@ export function constructPeopleRatedCard(
     </div>
     `
 };
+
+export function constructContainerButtons(
+    ...buttons
+) {
+    return `
+    <div class="container-buttons">
+        ${buttons.map((button) => {return button}).join("")}
+    </div>
+    `
+}
 
 export function constructAddPeopleButton() {
     return `
