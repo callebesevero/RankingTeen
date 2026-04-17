@@ -10,23 +10,43 @@
 
 .people-rate-card { 
     display: flex;
+    flex-direction: column;
 
     border-radius: 16px;
 
     padding: 32px;
     margin: 8px 0px;
     gap: 32px;
-    width: 100%;
+
+    text-align: center;
 
     background-color: var(--color-off-white-campfire);
 }
 
+@media (min-width: 1024px) {
+    .people-rate-card { 
+        flex-direction: row;
+
+        padding: 32px;
+        margin: 8px 0px;
+        gap: 32px;
+    }
+}
+
 .all-checkbox-container { 
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 8px;
+}
+
+@media (min-width: 1024px) {
+    .all-checkbox-container { 
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+
+        gap: 8px;
+    }
 }
 
 .checkbox-container label { 
@@ -68,11 +88,15 @@
 }
 
 .card-people-name { 
-    width: 128px;
-
     align-content: center;
 
     font: var(--fw-bold) var(--fs-body) var(--font-main);
+}
+
+@media (min-width: 1024px) {
+    .card-people-name { 
+        width: 128px;
+    }
 }
 
 .card-people-score { 
