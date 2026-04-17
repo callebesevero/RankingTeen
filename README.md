@@ -1,5 +1,11 @@
 # RankingTeen
 
+## Cronograma das features
+Cronograma iniciado no dia 16 de abril de 2026 (algumas features já foram adicionadas).
+| Dia | Features |
+|---|---|
+| 16 | <ul><li>Calcular o score<li>Exibição para avaliação do professor<li>Exibição já avaliado</ul>|
+
 ## Como será o main?
 Data
 
