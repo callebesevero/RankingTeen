@@ -25,13 +25,13 @@ export async function formatRankingToText() {
 
     const textRanking = ranking.map((people, position) => {
         if (position === 0) {        // gold medal 🥇
-            return `🥇 ${people["name"]}   ${people["score"]} pontos\n`
+            return `🥇 ${people["name"]}  ${people["score"]} pontos\n`
         } else if (position === 1) { // silver medal 🥈
-            return `🥈 ${people["name"]}   ${people["score"]} pontos\n`
+            return `🥈 ${people["name"]}  ${people["score"]} pontos\n`
         } else if (position === 2) { // bronze medal 🥉
-            return `🥉 ${people["name"]}   ${people["score"]} pontos\n`
+            return `🥉 ${people["name"]}  ${people["score"]} pontos\n`
         } else {
-            return `   ${people["name"]}   ${people["score"]} pontos\n`
+            return `       ${people["name"]}  ${people["score"]} pontos\n`
         };
     }).join("");
 
