@@ -75,7 +75,8 @@
 }
 
 .people-rated-card { 
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     border-radius: 16px;
 
@@ -114,7 +115,8 @@
     border-radius: 8px;
 
     padding: 32px;
-    width: 100%;
+    flex-basis: 35%;
+    flex-shrink: 0;
 }
 
 .container-buttons { 
