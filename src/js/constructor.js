@@ -1,7 +1,7 @@
 export function constructPeopleRateCard(
     people
 ) {
-    const checkboxes = constructCheckboxes();
+    const checkboxes = constructCheckboxes(people);
 
     return `
     <div class="people-rate-card" data-name="${people}">
@@ -11,60 +11,62 @@ export function constructPeopleRateCard(
     `
 };
 
-function constructCheckboxes() {
+function constructCheckboxes(
+    people
+) {
     return `
     <div class="all-checkbox-container">
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox" data-type="punctuality">
+                <input type="checkbox" class="checkbox" data-type="punctuality" id="${people}-punctuality">
                 Pontualidade
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox" data-type="bible">
+                <input type="checkbox" class="checkbox" data-type="bible" id="${people}-bible">
                 Bíblia
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox" data-type="comment">
+                <input type="checkbox" class="checkbox" data-type="comment" id="${people}-comment">
                 Comentários
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox" data-type="pray">
+                <input type="checkbox" class="checkbox" data-type="pray" id="${people}-pray">
                 Oração
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox" data-type="read">
+                <input type="checkbox" class="checkbox" data-type="read" id="${people}-read">
                 Leitura
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox" data-type="study">
+                <input type="checkbox" class="checkbox" data-type="study" id="${people}-study">
                 Estudou a lição
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox" data-type="visitor">
+                <input type="checkbox" class="checkbox" data-type="visitor" id="${people}-visitor">
                 Levar visitante
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox" data-type="talk">
+                <input type="checkbox" class="checkbox" data-type="talk" id="${people}-talk">
                 Conversas paralelas
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox" data-type="smartphone">
+                <input type="checkbox" class="checkbox" data-type="smartphone" id="${people}-smartphone">
                 Mexer no celular
             </label>
         </div>

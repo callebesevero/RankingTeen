@@ -42,6 +42,17 @@ if (getSaturday() === await getLastRankingDate()) { // if last saturday is in DB
     rankingTableContainer.innerHTML = await exhibitEmptyRating();
     main.appendChild(rankingTableContainer);
 
+    const checkboxes = document.querySelectorAll(".checkbox");
+    checkboxes.forEach((checkbox) => {
+        // Save state
+        checkbox.addEventListener("change", function() {
+            localStorage.setItem(checkbox.id, checkbox.checked);
+        });
+        // Saved state
+        const state = localStorage.getItem(checkbox.id) === "true";
+        checkbox.checked = state;
+    });
+
     const addPeople = document.querySelector("#button-addPeople");
     addPeople.addEventListener("click", async () => {
         const people = window.prompt("Insira o nome da pessoa para adicionar");
@@ -57,6 +68,8 @@ if (getSaturday() === await getLastRankingDate()) { // if last saturday is in DB
         const date = getSaturday();
         const ranking = await formatRankingToDB();
         addToDB({ date, ranking });
+
+        localStorage.clear();
 
         window.location.reload();
     });
