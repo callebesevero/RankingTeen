@@ -16,55 +16,55 @@ function constructCheckboxes() {
     <div class="all-checkbox-container">
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox-score" data-type="punctuality">
+                <input type="checkbox" class="checkbox" data-type="punctuality">
                 Pontualidade
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox-score" data-type="bible">
+                <input type="checkbox" class="checkbox" data-type="bible">
                 Bíblia
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox-score" data-type="comment">
+                <input type="checkbox" class="checkbox" data-type="comment">
                 Comentários
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox-score" data-type="pray">
+                <input type="checkbox" class="checkbox" data-type="pray">
                 Oração
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox-score" data-type="read">
+                <input type="checkbox" class="checkbox" data-type="read">
                 Leitura
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox-score" data-type="study">
+                <input type="checkbox" class="checkbox" data-type="study">
                 Estudou a lição
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox-score" data-type="visitor">
+                <input type="checkbox" class="checkbox" data-type="visitor">
                 Levar visitante
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox-score" data-type="talk">
+                <input type="checkbox" class="checkbox" data-type="talk">
                 Conversas paralelas
             </label>
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox-score" data-type="smartphone">
+                <input type="checkbox" class="checkbox" data-type="smartphone">
                 Mexer no celular
             </label>
         </div>

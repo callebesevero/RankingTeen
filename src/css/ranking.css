@@ -59,7 +59,7 @@
     font: var(--fw-regular) var(--fs-caption) var(--font-main);
 }
 
-.checkbox-score { 
+.checkbox { 
     appearance: none;
 
     cursor: pointer;
@@ -70,7 +70,7 @@
     border-color: var(--color-campfire);
 }
 
-.checkbox-score:checked {
+.checkbox:checked {
     background-color: var(--color-campfire);
 }
 
