@@ -21,7 +21,7 @@ Participação com comentários: 5 pts
 Orar: 2 pts
 Ler: 2 pts
 Estudar lição: 2 pts
-Levar visitante: 10 pts
+Levar visitante: 10 pts (por pessoa)
 Conversas paralelas excessivas na lição e no culto: -5pts
 Mexer no celular na hora da lição para ver algo que não é a lição ou Bíblia, e no culto: -5pts
 
