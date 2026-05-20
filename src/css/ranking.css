@@ -14,9 +14,9 @@
 
     border-radius: 16px;
 
-    padding: 32px;
+    padding: 16px;
     margin: 8px 0px;
-    gap: 32px;
+    gap: 16px;
 
     text-align: center;
 
@@ -27,9 +27,9 @@
     .people-rate-card { 
         flex-direction: row;
 
-        padding: 32px;
+        padding: 16px;
         margin: 8px 0px;
-        gap: 32px;
+        gap: 16px;
     }
 }
 
@@ -64,8 +64,9 @@
 
     cursor: pointer;
 
-    padding: 16px;
+    padding: 10px;
     border-radius: 4px;
+    border-width: 2px;
     border-style: solid;
     border-color: var(--color-campfire);
 }
@@ -95,9 +96,9 @@
 .card-people-name { 
     align-content: center;
 
-    padding: 32px;
+    padding: 16px;
 
-    font: var(--fw-bold) var(--fs-body) var(--font-main);
+    font: var(--fw-bold) var(--fs-h2) var(--font-main);
 }
 
 @media (min-width: 1024px) {
