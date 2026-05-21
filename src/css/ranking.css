@@ -14,9 +14,8 @@
 
     border-radius: 16px;
 
-    padding: 16px;
+    padding: 32px;
     margin: 8px 0px;
-    gap: 16px;
 
     text-align: center;
 
@@ -35,7 +34,8 @@
 
 .all-checkbox-container { 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
 
     gap: 8px;
 }
@@ -51,9 +51,9 @@
 
 .checkbox-container label { 
     display: flex;
-    flex-direction: column;
+    gap: 8px;
 
-    text-align: center;
+    text-align: left;
     align-items: center;
 
     font: var(--fw-regular) var(--fs-caption) var(--font-main);
@@ -75,6 +75,31 @@
     background-color: var(--color-campfire);
 }
 
+.checkbox-number {
+    border-radius: 8px;
+    border-style: solid;
+    border-color: var(--color-campfire);
+    border-width: 2px;
+    
+    padding: 8px;
+    width: 20px;
+
+    color: var(--color-campfire);
+    background-color: var(--color-off-white-campfire);
+    font: var(--fw-regular) var(--fs-body) var(--font-main);
+    appearance: none;
+    text-align: center;
+}
+
+.checkbox-number::placeholder {
+    color: var(--color-campfire);
+}
+
+.checkbox-number::-webkit-outer-spin-button,
+.checkbox-number::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+
 .people-rated-card { 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -94,7 +119,7 @@
 }
 
 .card-people-name { 
-    align-content: center;
+    text-align: center;
 
     padding: 16px;
 

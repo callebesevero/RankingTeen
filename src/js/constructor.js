@@ -54,8 +54,8 @@ function constructCheckboxes(
         </div>
         <div class="checkbox-container">
             <label> 
-                <input type="checkbox" class="checkbox" data-type="visitor" id="${people}-visitor">
-                Levar visitante
+                <input type="number" placeholder="0" min="0" class="checkbox-number" data-type="visitor" id="${people}-visitor">
+                Visitantes convidados
             </label>
         </div>
         <div class="checkbox-container">
