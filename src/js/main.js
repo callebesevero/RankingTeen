@@ -13,11 +13,6 @@ main.appendChild(dateContainer);
 const rankingTableContainer = document.createElement("div");
 rankingTableContainer.classList.add("ranking-table");
 
-if ([0, 3, 6, 9].includes(new Date().getMonth()) && new Date().getDate() <= 6 && await getLastRankingDate() != getSaturday()) {
-    const ranking = await restartRanking();
-    addToDB({ ranking });
-};
-
 // do a condition to verify if the day is a saturday: 
 //      if true -> change to new empty ranking
 //      if false -> maintain last ranking -> copy message
@@ -57,6 +52,11 @@ if (getSaturday() === await getLastRankingDate()) { // if last saturday is in DB
         const state = localStorage.getItem(checkbox.id) === "true";
         checkbox.checked = state;
     });
+
+    if ([0, 3, 6, 9].includes(new Date().getMonth()) && new Date().getDate() <= 6) {
+        const ranking = await restartRanking();
+        addToDB({ ranking });
+    };
 
     const addPeople = document.querySelector("#button-addPeople");
     addPeople.addEventListener("click", async () => {
