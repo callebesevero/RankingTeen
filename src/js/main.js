@@ -1,7 +1,7 @@
 import { getSaturday } from "./date";
 import { exhibitEmptyRating, exhibitLastRating } from "./exhibition";
 import { addPeopleToDB, addToDB, getLastRankingDate } from "./dbRequest";
-import { formatRankingToDB, formatRankingToText } from "./ranking";
+import { formatRankingToDB, formatRankingToText, restartRanking } from "./ranking";
 
 const main = document.querySelector(".main-content");
 
@@ -12,6 +12,11 @@ main.appendChild(dateContainer);
 
 const rankingTableContainer = document.createElement("div");
 rankingTableContainer.classList.add("ranking-table");
+
+if ([0, 3, 6, 9].includes(new Date().getMonth()) && new Date().getDate() <= 6 && await getLastRankingDate() != new Date().getDate()) {
+    const ranking = await restartRanking();
+    addToDB({ ranking });
+};
 
 // do a condition to verify if the day is a saturday: 
 //      if true -> change to new empty ranking

@@ -37,3 +37,20 @@ export async function formatRankingToText() {
 
     return `*RANKING ATUALIZADO - ${date}*\n${textRanking}`
 };
+
+export async function restartRanking() {
+    const cards = Array.from(
+        document.querySelectorAll(".people-rate-card")
+    );
+
+    const scores = await Promise.all(cards.map(async (card) => {
+        const peopleName = card.dataset.name;
+
+        return { "name": peopleName, "score": 0 };
+    }));
+    
+    // ordenate ranking by score
+    scores.sort((a, b) => b.score - a.score);
+    
+    return scores;
+}
