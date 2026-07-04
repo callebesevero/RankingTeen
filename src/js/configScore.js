@@ -1,3 +1,4 @@
+// Pontuação PG
 export const scoringMethods = {
     "punctuality": 3,
     "bible": 2,

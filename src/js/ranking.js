@@ -1,4 +1,4 @@
-import { getLastRanking, getLastRankingDate } from "./dbRequest";
+import { getLastRanking, getLastRankingDate } from "./db/dbRequest";
 import { calculateScore } from "./score";
 
 export async function formatRankingToDB() {

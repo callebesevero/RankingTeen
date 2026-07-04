@@ -1,4 +1,4 @@
-import { getLastRankedPeople, getLastRanking } from "./dbRequest";
+import { getLastRankedPeople, getLastRanking } from "./db/dbRequest";
 import { constructAddPeopleButton, constructConfirmScoreButton, constructContainerButtons, constructCopyRankingButton, constructPeopleRateCard, constructPeopleRatedCard } from "./constructor";
 
 export async function exhibitEmptyRating() {

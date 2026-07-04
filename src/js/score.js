@@ -1,5 +1,5 @@
 import { scoringMethods } from "./configScore";
-import { getLastScore } from "./dbRequest";
+import { getLastScore } from "./db/dbRequest";
 
 export async function calculateScore(
     card

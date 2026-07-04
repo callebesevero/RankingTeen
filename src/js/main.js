@@ -1,7 +1,8 @@
 import { getSaturday } from "./date";
 import { exhibitEmptyRating, exhibitLastRating } from "./exhibition";
-import { addPeopleToDB, addToDB, getLastRankingDate } from "./dbRequest";
+import { addPeopleToDB, addToDB, getLastRankingDate } from "./db/dbRequest";
 import { formatRankingToDB, formatRankingToText } from "./ranking";
+import { formatFormToText } from "./form";
 
 const main = document.querySelector(".main-content");
 
@@ -26,13 +27,26 @@ if (getSaturday() === await getLastRankingDate()) { // if last saturday is in DB
 
         try {
             await navigator.clipboard.writeText(textRanking);
-
             const copyRankingButtonOriginalText = copyRanking.value;
-
             copyRanking.value = "Texto copiado com sucesso! ✅";
-
             setTimeout(() => {
                 copyRanking.value = copyRankingButtonOriginalText;
+            }, 2000);
+        } catch (err) {
+            console.error("Aconteceu algum erro", err);
+        };
+    });
+
+    const copyForm = document.querySelector("#button-copyRanking");
+    copyForm.addEventListener("click", async () => {
+        const textForm = await formatFormToText();
+
+        try {
+            await navigator.clipboard.writeText(textForm);
+            const copyFormButtonOriginalText = copyForm.value;
+            copyForm.value = "Texto copiado com sucesso! ✅";
+            setTimeout(() => {
+                copyForm.value = copyFormButtonOriginalText;
             }, 2000);
         } catch (err) {
             console.error("Aconteceu algum erro", err);
@@ -58,7 +72,6 @@ if (getSaturday() === await getLastRankingDate()) { // if last saturday is in DB
         const people = window.prompt("Insira o nome da pessoa para adicionar");
         if (people) {
             await addPeopleToDB(people);
-
             window.location.reload();
         };
     });
@@ -68,9 +81,7 @@ if (getSaturday() === await getLastRankingDate()) { // if last saturday is in DB
         const date = getSaturday();
         const ranking = await formatRankingToDB();
         addToDB({ date, ranking });
-
         localStorage.clear();
-
         window.location.reload();
     });
 };

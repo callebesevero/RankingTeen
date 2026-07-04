@@ -1,0 +1,79 @@
+.main-content {
+    display: grid;
+    gap: 16px;
+
+    justify-content: center;
+}
+
+label {
+    font: var(--fw-regular) var(--fs-caption) var(--font-main);
+}
+
+.checkbox { 
+    appearance: none;
+
+    cursor: pointer;
+
+    padding: 10px;
+    border-radius: 4px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--color-campfire);
+}
+
+.checkbox:checked {
+    background-color: var(--color-campfire);
+}
+
+.checkbox-number {
+    border-radius: 8px;
+    border-style: solid;
+    border-color: var(--color-campfire);
+    border-width: 2px;
+    
+    padding: 8px;
+    width: 20px;
+
+    color: var(--color-campfire);
+    background-color: var(--color-off-white-campfire);
+    font: var(--fw-regular) var(--fs-body) var(--font-main);
+    appearance: none;
+    text-align: center;
+}    
+
+.checkbox-number::placeholder {
+    color: var(--color-campfire);
+}    
+
+.checkbox-number::-webkit-outer-spin-button,
+.checkbox-number::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}    
+
+input[type="button"] { 
+    display: flex;
+
+    padding: 16px;
+    border-radius: 8px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent;
+
+
+    box-sizing: border-box;
+    vertical-align: middle;
+
+    font: var(--fw-regular) var(--fs-caption) var(--font-main);
+}
+
+#button-copyForm {
+    cursor: pointer;
+
+    background-color: var(--color-campfire);
+    color: var(--color-off-white-campfire);
+}
+
+#button-copyForm:hover { 
+    background-color: var(--color-off-white-campfire);
+    color: var(--color-campfire);
+}
