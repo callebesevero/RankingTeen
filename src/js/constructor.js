@@ -79,7 +79,7 @@ export function constructPeopleRatedCard(
     score
 ) {
     return `
-    <div class="people-rated-card">
+    <div class="people-rated-card" data-name="${people}">
         <div class="card-people-name">${people}</div>
         <div class="card-people-score">${score}</div>
     </div>
