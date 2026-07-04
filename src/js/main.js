@@ -14,10 +14,8 @@ const rankingTableContainer = document.createElement("div");
 rankingTableContainer.classList.add("ranking-table");
 
 if ([0, 3, 6, 9].includes(new Date().getMonth()) && new Date().getDate() <= 6 && await getLastRankingDate() != getSaturday()) {
-    async () => {
-        const ranking = await restartRanking();
-        addToDB({ ranking });
-    };
+    const ranking = await restartRanking();
+    addToDB({ ranking });
 };
 
 // do a condition to verify if the day is a saturday: 
