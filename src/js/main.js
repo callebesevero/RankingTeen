@@ -53,10 +53,10 @@ if (getSaturday() === await getLastRankingDate()) { // if last saturday is in DB
         checkbox.checked = state;
     });
 
-    // if ([0, 3, 6, 9].includes(new Date().getMonth()) && new Date().getDate() <= 6) {
-    //     const ranking = await restartRanking();
-    //     addToDB({ ranking });
-    // };
+    if ([0, 3, 6, 9].includes(new Date().getMonth()) && new Date().getDate() <= 6) {
+        const ranking = await restartRanking();
+        addToDB({ ranking });
+    };
 
     const addPeople = document.querySelector("#button-addPeople");
     addPeople.addEventListener("click", async () => {

@@ -40,7 +40,7 @@ export async function formatRankingToText() {
 
 export async function restartRanking() {
     const cards = Array.from(
-        document.querySelectorAll(".people-rated-card")
+        document.querySelectorAll(".people-rate-card")
     );
 
     const scores = await Promise.all(cards.map(async (card) => {
