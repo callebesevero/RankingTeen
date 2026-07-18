@@ -31,5 +31,9 @@ function calculateRating(
         };
     })
 
+    const visitorCheckbox = card.querySelector(".checkbox-number");
+
+    score += visitorCheckbox.value * scoringMethods["visitor"];
+
     return Number(score);
 };
