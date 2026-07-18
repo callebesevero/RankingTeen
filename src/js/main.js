@@ -53,6 +53,18 @@ if (getSaturday() === await getLastRankingDate()) { // if last saturday is in DB
         checkbox.checked = state;
     });
 
+    const visitorCheckboxes = document.querySelectorAll(".checkbox-number");
+    visitorCheckboxes.forEach((checkbox) => {
+        // Save state
+        checkbox.addEventListener("change", function() {
+            localStorage.setItem(checkbox.id, checkbox.value);
+        });
+
+        // Saved state
+        const state = localStorage.getItem(checkbox.id);
+        checkbox.value = state;
+    })
+
     if ([0, 3, 6, 9].includes(new Date().getMonth()) && new Date().getDate() <= 6) {
         const ranking = await restartRanking();
         addToDB({ ranking });
