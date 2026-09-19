@@ -3,12 +3,12 @@ import { db } from "./firebaseConfig";
 
 export async function getLastRankingDate() {
     const object = await getLastDBObject();
-    return object["item/date"];
+    return object["/item/date"];
 };
 
 export async function getLastRanking() {
     const object = await getLastDBObject();
-    return object["item/ranking"];
+    return object["/item/ranking"];
 };
 
 export async function getLastRankedPeople() {
