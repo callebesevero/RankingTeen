@@ -13,7 +13,7 @@ export async function getLastRanking() {
 
 export async function getLastRankedPeople() {
     const object = await getLastDBObject();
-    const ranking = object?.ranking;
+    const ranking = object?.item.ranking;
 
     if (!ranking) {
         return null;
