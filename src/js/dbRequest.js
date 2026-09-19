@@ -29,7 +29,7 @@ export async function getLastRankedPeople() {
 export async function getLastScore(
     people
 ) {
-    const rankingRef = ref(db, "/ranking");
+    const rankingRef = ref(db, "/item/ranking");
     const nameSearch = query(rankingRef, orderByChild("name"), equalTo(people));
 
     return get(nameSearch).then(snapshot => {
