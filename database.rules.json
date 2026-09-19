@@ -1,7 +1,7 @@
 {
   "rules": {
     ".read": true,
-    ".write": true,
+    ".write": "newData.child('senha_secreta').val() === 'subversivos'",
       
       
     "ranking": {
