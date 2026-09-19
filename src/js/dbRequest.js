@@ -79,7 +79,7 @@ export async function addPeopleToDB(
 export async function addToDB(
     item
 ) {
-    await set(ref(db, "/"), item), {
+    await set(ref(db, "/"), item, {
         driblaBesta: "subversivos"
-    };
+    });
 };
