@@ -12,11 +12,9 @@ export async function getLastRanking() {
 };
 
 export async function getLastRankedPeople() {
-    // const object = await getLastDBObject();
-    // const ranking = object?.item?.ranking;
+    const object = await getLastDBObject();
+    const ranking = object?.item?.ranking;
 
-    const ranking = getLastRanking();
-    
     if (!ranking) {
         return null;
     };
